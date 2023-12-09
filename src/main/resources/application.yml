@@ -1,0 +1,37 @@
+server:
+  port: 8081
+
+spring:
+# 配置Mysql5.7服务
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://203.202.236.63:13306/home_data?useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+# 配置redis服务
+  redis:
+    database: 1
+    host: 203.202.236.63
+    port: 6379
+    timeout: 5000
+    jedis:
+      pool:
+        enabled: true
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: -1ms
+    password: x12598325
+# 如果使用了此框架，可以开启日志输出等等
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  type-aliases-package: keyle.fun.SequenceGeneratorAPI.entity
+
+
+
+
+
+

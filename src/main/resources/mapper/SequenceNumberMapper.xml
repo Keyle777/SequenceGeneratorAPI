@@ -1,0 +1,18 @@
+<!-- SequenceNumberMapper.xml -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="keyle.fun.SequenceGeneratorAPI.mapper.SequenceNumberMapper">
+    <resultMap id="BaseResultMap" type="keyle.fun.SequenceGeneratorAPI.entity.SequenceNumber">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="sequence_no" property="sequenceNo" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, sequence_no, create_time, update_time
+    </sql>
+    <select id="findBySequenceNo" resultType="keyle.fun.SequenceGeneratorAPI.entity.SequenceNumber">
+        SELECT id FROM sequence_number WHERE sequence_no = #{sequenceNo}
+    </select>
+
+</mapper>
