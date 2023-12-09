@@ -5,13 +5,13 @@ spring:
 # 配置Mysql5.7服务
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://203.202.236.63:13306/home_data?useSSL=false&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://ip:13306/home_data?useSSL=false&serverTimezone=Asia/Shanghai
     username: root
     password: root
 # 配置redis服务
   redis:
     database: 1
-    host: 203.202.236.63
+    host: ip
     port: 6379
     timeout: 5000
     jedis:
@@ -21,7 +21,7 @@ spring:
         max-idle: 8
         min-idle: 0
         max-wait: -1ms
-    password: x12598325
+    password: password
 # 如果使用了此框架，可以开启日志输出等等
 mybatis-plus:
   configuration:
